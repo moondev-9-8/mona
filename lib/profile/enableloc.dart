@@ -13,12 +13,18 @@ class _nameState extends State<Enableloc> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(
+            height: 20,
+          ),
           Container(
             child: Image(
               image: AssetImage("images/map.png"),
               fit: BoxFit.contain,
             ),
             height: 400,
+          ),
+          SizedBox(
+            height: 20,
           ),
           Text(
             "Enable Your Location",
@@ -28,7 +34,7 @@ class _nameState extends State<Enableloc> {
             padding: EdgeInsets.all(20),
             child: Text(
               "Choose your location to start find the request around you.",
-              style: TextStyle(color: Colors.grey[600], fontSize: 17),
+              style: TextStyle(color: Colors.grey[600], fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ),
@@ -37,7 +43,7 @@ class _nameState extends State<Enableloc> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 140, vertical: 15),
+                padding: EdgeInsets.symmetric(horizontal: 120, vertical: 15),
                 primary: Color.fromARGB(255, 158, 43, 43),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20))),
@@ -50,7 +56,7 @@ class _nameState extends State<Enableloc> {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           InkWell(
             child: Text(

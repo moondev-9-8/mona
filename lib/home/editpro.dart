@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 //import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
-class Profile extends StatefulWidget {
-  Profile({Key? key}) : super(key: key);
+class Editpro extends StatefulWidget {
+  Editpro({Key? key}) : super(key: key);
 
   @override
-  State<Profile> createState() => _nameState();
+  State<Editpro> createState() => _nameState();
 }
 
-class _nameState extends State<Profile> {
+class _nameState extends State<Editpro> {
   TextEditingController phoneController = new TextEditingController();
   String phoneNumber = "";
 
@@ -38,7 +38,7 @@ class _nameState extends State<Profile> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Profile Setup",
+          "Edit Profile",
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white70,
@@ -90,10 +90,28 @@ class _nameState extends State<Profile> {
                 child: Form(
                     child: Column(
                   children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                          label: Text("Full Name"),
-                          border: UnderlineInputBorder()),
+                    Row(
+                      children: [
+                        Container(
+                          width: 180,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                label: Text("First Name"),
+                                border: UnderlineInputBorder()),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          width: 180,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                label: Text("Last Name"),
+                                border: UnderlineInputBorder()),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 10,
@@ -166,46 +184,7 @@ class _nameState extends State<Profile> {
                           border: UnderlineInputBorder()),
                     ),
                     SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: " marital status",
-                          suffixIcon: Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.black,
-                          ),
-                          border: UnderlineInputBorder()),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: "state",
-                          suffixIcon: Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.black,
-                          ),
-                          border: UnderlineInputBorder()),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: "locality", border: UnderlineInputBorder()),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: "occupation",
-                          border: UnderlineInputBorder()),
-                    ),
-                    SizedBox(
-                      height: 20,
+                      height: 60,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -214,9 +193,9 @@ class _nameState extends State<Profile> {
                           primary: Color.fromARGB(255, 158, 43, 43),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20))),
-                      child: Text("Next"),
+                      child: Text("Save"),
                       onPressed: () {
-                        Navigator.of(context).pushReplacementNamed("enableloc");
+                        Navigator.of(context).pushReplacementNamed("profi");
                       },
                     ),
                   ],

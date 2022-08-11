@@ -13,12 +13,18 @@ class _nameState extends State<Location> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(
+            height: 20,
+          ),
           Container(
             child: Image(
               image: AssetImage("images/loca.jpg"),
               fit: BoxFit.cover,
             ),
-            height: 600,
+            height: 500,
+          ),
+          SizedBox(
+            height: 10,
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(

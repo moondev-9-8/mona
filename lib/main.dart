@@ -7,11 +7,13 @@ import 'package:course_flutter/create/addnote.dart';
 import 'package:course_flutter/home/bookinginfo.dart';
 import 'package:course_flutter/home/bookings.dart';
 import 'package:course_flutter/home/consult.dart';
+import 'package:course_flutter/home/editpro.dart';
 import 'package:course_flutter/home/healthBar.dart';
 import 'package:course_flutter/home/healthData.dart';
 import 'package:course_flutter/home/homepage.dart';
 import 'package:course_flutter/home/navi.dart';
 import 'package:course_flutter/home/past.dart';
+import 'package:course_flutter/home/profi.dart';
 import 'package:course_flutter/home/settings.dart';
 import 'package:course_flutter/intro/choose.dart';
 import 'package:course_flutter/intro/find.dart';
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
         "locate": (context) => Location(),
         "navi": (context) => Navi(),
         "homepage1": (context) => Homepage1(),
+        "profi": (context) => Profi(),
+        "editpro": (context) => Editpro(),
         "booking": (context) => Booking(),
         "bookinginfo": (context) => BookingInfo(),
         "healthdata": (context) => HealthData(),

@@ -18,7 +18,7 @@ class _nameState extends State<Forget> {
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: EdgeInsets.only(top: 100, bottom: 20, left: 20),
+                padding: EdgeInsets.only(top: 80, bottom: 20, left: 20),
                 child: Text(
                   "Forgot your password?",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -26,7 +26,7 @@ class _nameState extends State<Forget> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.only(top: 10, left: 20, bottom: 10),
                 child: Text(
                   "Enter the Email associated with your account to reset your password.",
                   style: TextStyle(color: Colors.grey[600]),

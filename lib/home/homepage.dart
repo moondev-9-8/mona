@@ -1,4 +1,3 @@
-import 'package:course_flutter/home/bookings.dart';
 import 'package:flutter/material.dart';
 
 class Homepage1 extends StatefulWidget {
@@ -27,96 +26,148 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
         body: Column(
           children: [
             Container(
-              height: 120,
-              width: double.infinity,
-              color: Theme.of(context).primaryColor,
-              child: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(top: 15, left: 5),
-                    child: CircleAvatar(
-                      radius: 20,
-                      backgroundImage: AssetImage("images/contactIcon.PNG"),
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 10, top: 50),
-                        child: Text(
-                          "Hi, Mona",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17),
-                        ),
-                      ),
-                      Row(
+                height: 160,
+                width: double.infinity,
+                // color: Colors.amber,
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 140,
+
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.horizontal(
+                              left: Radius.circular(13),
+                              right: Radius.circular(13)),
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Color.fromARGB(255, 128, 43, 37),
+                                Color.fromARGB(255, 115, 26, 20),
+                                Color.fromARGB(255, 100, 21, 15),
+                                Color.fromARGB(255, 80, 13, 9)
+                              ],
+                              stops: [
+                                0.1,
+                                0.4,
+                                0.6,
+                                0.9,
+                              ])),
+                      //color: Theme.of(context).primaryColor,
+
+                      child: Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(left: 5),
-                            child: Icon(
-                              Icons.location_pin,
-                              color: Colors.white,
-                            ),
+                              padding: EdgeInsets.only(top: 10, left: 5),
+                              child: InkWell(
+                                child: CircleAvatar(
+                                  radius: 22,
+                                  backgroundImage:
+                                      AssetImage("images/contactIcon.PNG"),
+                                ),
+                                onTap: () {
+                                  Navigator.of(context).pushNamed("profi");
+                                },
+                              )),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(left: 10, top: 50),
+                                child: Text(
+                                  "Hi, Mona",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 17),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(left: 9),
+                                    child: Icon(
+                                      Icons.location_pin,
+                                      color: Colors.white,
+                                      size: 15,
+                                    ),
+                                  ),
+                                  Container(
+                                      padding: EdgeInsets.only(top: 3),
+                                      child: Text(
+                                        "15/2 new texas",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      )),
+                                  Container(
+                                      padding: EdgeInsets.only(top: 5),
+                                      child: Icon(
+                                        Icons.arrow_drop_down,
+                                        color: Colors.white,
+                                      ))
+                                ],
+                              ),
+                            ],
                           ),
                           Container(
-                              padding: EdgeInsets.only(top: 3),
-                              child: Text(
-                                "15/2 new texas",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              )),
+                              padding: EdgeInsets.only(left: 115, top: 25),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.map,
+                                    color: Colors.white,
+                                  ))),
                           Container(
-                              padding: EdgeInsets.only(top: 5),
-                              child: Icon(
-                                Icons.arrow_drop_down,
-                                color: Colors.white,
-                              ))
+                              padding: EdgeInsets.only(top: 25, left: 0),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.notifications,
+                                    color: Colors.white,
+                                  )))
                         ],
                       ),
-                    ],
-                  ),
-                  Container(
-                      padding: EdgeInsets.only(left: 90, top: 25),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.map_sharp,
-                            color: Colors.white,
-                          ))),
-                  Container(
-                      padding: EdgeInsets.only(top: 25, left: 3),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.notifications,
-                            color: Colors.white,
-                          )))
-                ],
-              ),
-            ),
-            Container(
-                //margin: EdgeInsets.only(top: 20),
-                width: 350,
-                decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(20)),
-                child: Container(
-                  padding: EdgeInsets.only(right: 240),
-                  child: Row(
-                    children: [
-                      IconButton(
-                          icon: Icon(Icons.search),
-                          onPressed: () {
-                            showSearch(
-                                context: context, delegate: DataSearch());
-                          }),
-                      Text("Search...")
-                    ],
-                  ),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(
+                          top: 115,
+                          left: 20,
+                        ),
+                        width: 350,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[100],
+                            borderRadius: BorderRadius.circular(25)),
+                        child: Container(
+                          padding: EdgeInsets.only(right: 240),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                  icon: Icon(
+                                    Icons.search,
+                                    color: Colors.grey[500],
+                                  ),
+                                  onPressed: () {
+                                    showSearch(
+                                        context: context,
+                                        delegate: DataSearch());
+                                  }),
+                              InkWell(
+                                  onTap: () {
+                                    showSearch(
+                                        context: context,
+                                        delegate: DataSearch());
+                                  },
+                                  child: Text(
+                                    "Search.....",
+                                    style: TextStyle(color: Colors.grey[500]),
+                                  ))
+                            ],
+                          ),
+                        )),
+                  ],
                 )),
             Container(
               padding: EdgeInsets.only(right: 300, top: 10),
@@ -158,9 +209,12 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image(
-                                        image: AssetImage("images/dental.png"),
-                                        fit: BoxFit.cover,
+                                      Container(
+                                        padding: EdgeInsets.all(15),
+                                        child: Image(
+                                          image: AssetImage("images/dent.png"),
+                                          fit: BoxFit.contain,
+                                        ),
                                       ), // <-- Icon
                                       // <-- Text
                                     ],
@@ -195,8 +249,10 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Image(
-                                        image: AssetImage("images/heart.png"),
-                                        fit: BoxFit.cover,
+                                        image: AssetImage("images/hrtmon.png"),
+                                        fit: BoxFit.contain,
+                                        //colorBlendMode: BlendMode.color,
+                                        // color: Color.fromARGB(255, 172, 31, 47),
                                       ),
 
                                       // <-- Text
@@ -239,6 +295,7 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                                     children: <Widget>[
                                       Icon(
                                         Icons.remove_red_eye,
+                                        size: 30,
                                         color:
                                             Color.fromARGB(255, 219, 173, 34),
                                       ), // <-- Icon
@@ -280,9 +337,12 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
-                                      Image(
-                                        image: AssetImage("images/brain.png"),
-                                        fit: BoxFit.cover,
+                                      Container(
+                                        padding: EdgeInsets.all(12),
+                                        child: Image(
+                                          image: AssetImage("images/brain.png"),
+                                          fit: BoxFit.cover,
+                                        ),
                                       ), // <-- Icon
                                       // <-- Text
                                     ],
@@ -305,7 +365,7 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                   ]),
             ),
             Container(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.only(left: 10),
               child: Row(
                 children: [
                   Text(
@@ -327,7 +387,7 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
               ),
             ),
             Container(
-              height: 160,
+              height: 175,
               child: GridView(
                 scrollDirection: Axis.vertical,
                 //direction: Axis.horizontal,
@@ -341,21 +401,21 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                     color: Colors.grey,
                     width: 150,
                     height: 250,
-                    child: Image(image: AssetImage("images/dental.png")),
+                    child: Image(image: AssetImage("images/dent.png")),
                   ),
                   Container(
                     margin: EdgeInsets.all(10),
                     color: Colors.grey,
                     width: 150,
                     height: 250,
-                    child: Image(image: AssetImage("images/dental.png")),
+                    child: Image(image: AssetImage("images/dent.png")),
                   ),
                   Container(
                     margin: EdgeInsets.all(10),
                     color: Colors.grey,
                     width: 150,
                     height: 250,
-                    child: Image(image: AssetImage("images/dental.png")),
+                    child: Image(image: AssetImage("images/dent.png")),
                   ),
                 ],
               ),
@@ -371,8 +431,8 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
               children: [
                 Container(
                   margin: EdgeInsets.all(10),
-                  width: 370,
-                  height: 55,
+                  width: 360,
+                  height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                         top: Radius.circular(13), bottom: Radius.circular(10)),
@@ -382,7 +442,7 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                     children: [
                       Container(
                           padding: EdgeInsets.all(10),
-                          child: Image(image: AssetImage("images/baby.png"))),
+                          child: Image(image: AssetImage("images/family.png"))),
                       Text(
                         "Family Planing",
                         style: TextStyle(
@@ -390,7 +450,7 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                             fontSize: 16,
                             color: Colors.grey[800]),
                       ),
-                      SizedBox(width: 160),
+                      SizedBox(width: 120),
                       IconButton(
                           onPressed: () {},
                           icon: Icon(Icons.navigate_next,
@@ -401,7 +461,7 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                 Container(
                   margin: EdgeInsets.all(10),
                   width: 370,
-                  height: 55,
+                  height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                         top: Radius.circular(13), bottom: Radius.circular(10)),
@@ -410,8 +470,9 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                   child: Row(
                     children: [
                       Container(
+                          // width: 50,
                           padding: EdgeInsets.all(10),
-                          child: Image(image: AssetImage("images/baby.png"))),
+                          child: Image(image: AssetImage("images/anten.png"))),
                       Text(
                         "Antenatal Care",
                         style: TextStyle(
@@ -419,7 +480,7 @@ class _nameState extends State<Homepage1> with SingleTickerProviderStateMixin {
                             fontSize: 16,
                             color: Colors.grey[800]),
                       ),
-                      SizedBox(width: 160),
+                      SizedBox(width: 120),
                       IconButton(
                           onPressed: () {},
                           icon: Icon(Icons.navigate_next,
